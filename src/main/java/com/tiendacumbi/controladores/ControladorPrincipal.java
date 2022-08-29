@@ -18,4 +18,9 @@ public class ControladorPrincipal {
     public String cargarIndex() {
         return "index";
     }
+    
+    @GetMapping("/botas")
+    public String modelosBotas(){
+    return "botas";
+    }
 }
