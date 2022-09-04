@@ -9,5 +9,8 @@ package com.tiendacumbi.entidades;
  * @author educu
  */
 public class GeneroMusical {
-    
+    private int id;
+    private String nombre;
+    private String carpeta;
+    private boolean hab;
 }
