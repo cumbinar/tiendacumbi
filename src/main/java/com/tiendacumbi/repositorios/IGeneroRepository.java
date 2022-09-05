@@ -4,12 +4,13 @@
  */
 package com.tiendacumbi.repositorios;
 
+import com.tiendacumbi.entidades.GeneroMusical;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
  *
  * @author educu
  */
-public interface IGeneroRepository  extends JpaRepository{
+public interface IGeneroRepository  extends JpaRepository<GeneroMusical, Integer>{
     
 }
