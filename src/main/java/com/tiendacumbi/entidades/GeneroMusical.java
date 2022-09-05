@@ -4,12 +4,24 @@
  */
 package com.tiendacumbi.entidades;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 /**
  *
  * @author educu
  */
+@Entity(name = "tgenerosmusicales")
 public class GeneroMusical {
+
+    @Id
+    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    @Column(name = "nombre", length = 45)
     private String nombre;
     private String carpeta;
     private boolean hab;
@@ -29,5 +41,37 @@ public class GeneroMusical {
         this.carpeta = carpeta;
         this.hab = hab;
     }
-    
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getCarpeta() {
+        return carpeta;
+    }
+
+    public void setCarpeta(String carpeta) {
+        this.carpeta = carpeta;
+    }
+
+    public boolean isHab() {
+        return hab;
+    }
+
+    public void setHab(boolean hab) {
+        this.hab = hab;
+    }
+
 }
