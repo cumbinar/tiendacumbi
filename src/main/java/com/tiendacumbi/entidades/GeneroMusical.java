@@ -21,9 +21,14 @@ public class GeneroMusical {
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    @Column(name = "nombre", length = 45)
+    
+    @Column(name = "nombre", length = 45, nullable=false, unique = true)
     private String nombre;
+    
+    @Column(name = "carpeta", length = 45, nullable=false, unique = true)
     private String carpeta;
+    
+    @Column(name = "hab", columnDefinition = "TINYINT", nullable = false )
     private boolean hab;
 
     public GeneroMusical() {
