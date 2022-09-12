@@ -4,14 +4,29 @@
  */
 package com.tiendacumbi.entidades;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 /**
  *
  * @author educu
  */
+@Entity(name = "tgenerosmusicales")
 public class GeneroMusical {
+
+    @Id
+    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
+    @Column(name="nombre", length =45, nullable = false, unique = true)
     private String nombre;
+    @Column(name = "carpeta", length = 45, nullable = false, unique = true)
     private String carpeta;
+    @Column(name ="hab", columnDefinition = "TINYINT", nullable = false)
     private boolean hab;
 
     public GeneroMusical() {
@@ -61,8 +76,5 @@ public class GeneroMusical {
     public void setHab(boolean hab) {
         this.hab = hab;
     }
-    
-    
-    
-    
+
 }
