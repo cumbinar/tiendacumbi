@@ -19,8 +19,8 @@ public class ControladorPrincipal {
         return "index";
     }
     
-    @GetMapping("/botas")
+    @GetMapping("/canciones")
     public String modelosBotas(){
-    return "botas";
+    return "listacanciones";
     }
 }
