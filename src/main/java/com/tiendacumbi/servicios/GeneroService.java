@@ -4,6 +4,9 @@
  */
 package com.tiendacumbi.servicios;
 
+import com.tiendacumbi.entidades.GeneroMusical;
+import com.tiendacumbi.repositorios.IGeneroRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
@@ -13,8 +16,12 @@ import org.springframework.stereotype.Service;
 @Service
 public class GeneroService {
     
-    public void crearNuevoGenero(){
+    @Autowired
+    private IGeneroRepository repo;
     
+    public GeneroMusical crearNuevoGenero(GeneroMusical g){
+        GeneroMusical guardado = repo.save(g);
+        return guardado;
     }
     
     public void actualizarGenero(){
