@@ -17,4 +17,5 @@ import org.springframework.stereotype.Repository;
 public interface IGeneroRepository extends JpaRepository<GeneroMusical, Integer>{
     
     public List<GeneroMusical> findByNombreContainingOrCarpetaContaining(String criterio1, String criterio2);
+    public List<GeneroMusical>findByHabTrue();
 }

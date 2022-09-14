@@ -39,10 +39,15 @@ public class GeneroService {
         List<GeneroMusical> lista = repo.findByNombreContainingOrCarpetaContaining(criterio, criterio);
         return lista;
     }
-    
-    public List<GeneroMusical> consultarGeneros(){
-    List<GeneroMusical> lista = repo.findAll();
-    return lista;
+
+    public List<GeneroMusical> consultarGeneros() {
+        List<GeneroMusical> lista = repo.findAll();
+        return lista;
+    }
+
+    public List<GeneroMusical> consultarGenerosHabilitados() {
+        List<GeneroMusical> lista = repo.findByHabTrue();
+        return lista;
     }
 
     public void eliminarGenero(GeneroMusical g) {
