@@ -5,6 +5,7 @@
 package com.tiendacumbi.repositorios;
 
 import com.tiendacumbi.entidades.GeneroMusical;
+import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -15,4 +16,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface IGeneroRepository extends JpaRepository<GeneroMusical, Integer>{
     
+    public List<GeneroMusical> findByNombreContainingOrCarpetaContaining(String criterio1, String criterio2);
 }

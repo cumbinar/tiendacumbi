@@ -6,6 +6,7 @@ package com.tiendacumbi.servicios;
 
 import com.tiendacumbi.entidades.GeneroMusical;
 import com.tiendacumbi.repositorios.IGeneroRepository;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -28,10 +29,16 @@ public class GeneroService {
     
     }
     
-    public void consultarGeneros(){
-    
+    public GeneroMusical consultarGeneros(int id){
+        GeneroMusical g = repo.findById(id).get();
+        return g;
     }
     
+     public List<GeneroMusical> consultarGeneros(String criterio){
+     List<GeneroMusical> lista = repo.findByNombreContainingOrCarpetaContaining(criterio, criterio);
+     return lista;
+     }
+     
     public void eliminarGenero(){
     
     }
