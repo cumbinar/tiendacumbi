@@ -16,31 +16,38 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class GeneroService {
-    
+
     @Autowired
     private IGeneroRepository repo;
-    
-    public GeneroMusical crearNuevoGenero(GeneroMusical g){
+
+    public GeneroMusical crearNuevoGenero(GeneroMusical g) {
         GeneroMusical guardado = repo.save(g);
         return guardado;
     }
-    
-    public void actualizarGenero(){
-    
+
+    public GeneroMusical actualizarGenero(GeneroMusical g) {
+        GeneroMusical guardado = repo.save(g);
+        return guardado;
     }
-    
-    public GeneroMusical consultarGeneros(int id){
+
+    public GeneroMusical consultarGeneros(int id) {
         GeneroMusical g = repo.findById(id).get();
         return g;
     }
-    
-     public List<GeneroMusical> consultarGeneros(String criterio){
-     List<GeneroMusical> lista = repo.findByNombreContainingOrCarpetaContaining(criterio, criterio);
-     return lista;
-     }
-     
-    public void eliminarGenero(){
-    
+
+    public List<GeneroMusical> consultarGeneros(String criterio) {
+        List<GeneroMusical> lista = repo.findByNombreContainingOrCarpetaContaining(criterio, criterio);
+        return lista;
     }
     
+    public List<GeneroMusical> consultarGeneros(){
+    List<GeneroMusical> lista = repo.findAll();
+    return lista;
+    }
+
+    public void eliminarGenero(GeneroMusical g) {
+        repo.delete(g);
+
+    }
+
 }
