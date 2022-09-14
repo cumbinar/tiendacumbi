@@ -27,7 +27,7 @@ public class GenerosController {
     }
     
     
-    @GetMapping("/formgeneros")
+    @GetMapping("/generos/form")
     public String cargarFormGeneros(){
         return "formgeneros";
     }
