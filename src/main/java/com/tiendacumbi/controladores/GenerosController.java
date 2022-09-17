@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class GenerosController {
     
-    @GetMapping("/")
+    @GetMapping("/index")
     public String cargarIndex(){
         return "index";
     }
@@ -30,6 +30,11 @@ public class GenerosController {
     @GetMapping("/formgeneros")
     public String cargarFormGeneros(){
         return "formgeneros";
+    }
+    
+      @GetMapping("/listacanciones")
+    public String cargarListaCanciones(){
+        return "listacanciones";
     }
 }
 
