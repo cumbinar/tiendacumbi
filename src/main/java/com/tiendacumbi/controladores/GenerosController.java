@@ -21,13 +21,13 @@ public class GenerosController {
         return "index";
     }
     
-    @GetMapping("/generos")
+    @GetMapping("/listageneros")
     public String cargarListaGeneros(){
         return "listageneros";
     }
     
     
-    @GetMapping("/generos/form")
+    @GetMapping("/formgeneros")
     public String cargarFormGeneros(){
         return "formgeneros";
     }
