@@ -23,9 +23,9 @@ public class TiendacumbiApplicationTest {
     private GeneroService servicio;
 
     @Test
-    @Disabled
+    
     void verificarSiSeGuardaUnGeneroNuevo() {
-        GeneroMusical g = new GeneroMusical("Bachata", "Dominicana", true);
+        GeneroMusical g = new GeneroMusical("Rock", "Rock en español", true);
         GeneroMusical guardado = servicio.crearNuevoGenero(g);
         Assertions.assertTrue(guardado != null, "ERROR no se pudo guardar nuevo genero");
     }

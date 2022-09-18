@@ -51,24 +51,13 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
+                <tr th:each="genero : ${generos}">
+                    <td scope="row" th:text="${genero.id}">...</td>
+                    <td th:text="${genero.nombre}">...</td>
+                    <td th:text="${genero.carpeta}">...</td>
+                    <td th:text="${genero.hab}">...</td>
                 </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Salsa</td>
-                    <td>Salsa</td>
-                    <td>True</td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td colspan="2">Larry the Bird</td>
-                    <td>@twitter</td>
-                </tr>
-            </tbody>
+              
         </table>
 
 
