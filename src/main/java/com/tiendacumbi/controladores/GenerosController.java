@@ -4,32 +4,41 @@
  */
 package com.tiendacumbi.controladores;
 
+import com.tiendacumbi.servicios.GeneroService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 /**
- *index.html /
- * listageneros.html /generos
- * formgeneros.html /generos/form/{id}
+ * index.html / listageneros.html /generos formgeneros.html /generos/form/{id}
+ *
  * @author educu
  */
 @Controller
 public class GenerosController {
-    
-    @GetMapping("/")
-    public String cargarIndex(){
+
+    @Autowired
+    private GeneroService servicio;
+
+    @GetMapping("/index")
+    public String cargarIndex() {
         return "index";
     }
-    
+
     @GetMapping("/listageneros")
-    public String cargarListaGeneros(){
+    public String cargarListaGeneros(Model modelo) {
+        modelo.addAttribute("generos", servicio.consultarGeneros());
         return "listageneros";
     }
-    
-    
+
     @GetMapping("/formgeneros")
-    public String cargarFormGeneros(){
+    public String cargarFormGeneros() {
         return "formgeneros";
     }
-}
 
+    @GetMapping("/listacanciones")
+    public String cargarListaCanciones() {
+        return "listacanciones";
+    }
+}
