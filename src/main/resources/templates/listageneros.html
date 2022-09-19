@@ -24,7 +24,13 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
             <h4 class="container">Listado de géneros musicales</h4>
         </header>
 
-        <nav class=" container navbar navbar-expand-lg bg-light">
+        <form class=" container margin-top">
+
+            <label for="criterio">Buscar por:</label>
+            <input type="text" id="criterio" name="criterio">
+        </form>
+
+        <nav class=" container navbar navbar-expand-lg bg-light margin-top">
             <div class="container-fluid">
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -57,7 +63,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                     <td th:text="${genero.carpeta}">...</td>
                     <td th:text="${genero.hab}">...</td>
                 </tr>
-              
+
         </table>
 
 
