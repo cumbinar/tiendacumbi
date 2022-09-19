@@ -19,5 +19,6 @@ a:focus {
 }
 
 .actual{
-    color: #FA8F1A;
+    color: #F5B43D;
+    border-bottom: 1px solid;
 }
