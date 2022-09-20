@@ -21,17 +21,8 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
 
             <img src="/img/cumbinova.png" alt="Logotipo" style="width:6%; margin-top:1.5rem" class="mx-auto d-block">
 
-            <h4 class="container">Listado de géneros musicales</h4>
         </header>
-        
-        <!--formulario de búsqueda-->
-        
-        <form action="/listageneros" method="get" class=" container margin-top">
 
-            <label for="criterio">Buscar por:</label>
-            <input type="text" id="criterio" name="criterio">
-            <input type="submit" value="Buscar">
-        </form>
 
         <nav class=" container navbar navbar-expand-lg bg-light margin-top">
             <div class="container-fluid">
@@ -49,6 +40,16 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                     </div>        
                 </div>
         </nav>
+        <h4 class="container margin-top">Listado de géneros musicales</h4>
+
+        <!--formulario de búsqueda-->  
+        <form action="/listageneros" method="get" class=" container margin-top">
+
+            <label for="criterio">Buscar por:</label>
+            <input type="text" id="criterio" name="criterio">
+            <input type="submit" value="Buscar">
+        </form>
+
 
         <table class=" container table table-striped table-hover">
             <thead>
