@@ -23,24 +23,24 @@ public class TiendacumbiApplicationTest {
     private GeneroService servicio;
 
     @Test
-     @Disabled  
+    @Disabled
     void verificarSiSeGuardaUnGeneroNuevo() {
-        GeneroMusical g = new GeneroMusical("Rock", "Rock en español", true);
+        GeneroMusical g = new GeneroMusical("Albazo", "Rocksito", true);
         GeneroMusical guardado = servicio.crearNuevoGenero(g);
         Assertions.assertTrue(guardado != null, "ERROR no se pudo guardar nuevo genero");
     }
 
-    
     @Test
-    @Disabled        
+    @Disabled
     void verificarSiSeActualizaUnGenero() {
-        GeneroMusical g = new GeneroMusical("Fandango", "Caribeño", true);
+        GeneroMusical g = new GeneroMusical("Rocky", "Rock and roll", true);
         GeneroMusical guardado = servicio.crearNuevoGenero(g);
-        guardado.setCarpeta("caribe");
-        guardado.setHab(false);
+        guardado.setNombre("Rock");
+        guardado.setCarpeta("Rock en español");
+        guardado.setHab(true);
         GeneroMusical actualizado = servicio.actualizarGenero(guardado);
-        
-        Assertions.assertTrue(actualizado.getCarpeta().equals("caribe"), "ERROR no se pudo Actualizar genero");
+
+        Assertions.assertTrue(actualizado.getCarpeta().equals("Rock and roll"), "ERROR no se pudo Actualizar genero");
         Assertions.assertTrue(actualizado.isHab() == false, "ERROR no se pudo actualizar genero");
     }
 }
