@@ -43,4 +43,27 @@ public class Cancion {
     @ManyToOne
     @JoinColumn(name = "idGeneroMusical")
     private GeneroMusical genero;    
+
+    public Cancion(String nombre, int anioPublicacion, String compositor, String interprete, String imagen, GeneroMusical genero) {
+        this.nombre = nombre;
+        this.anioPublicacion = anioPublicacion;
+        this.compositor = compositor;
+        this.interprete = interprete;
+        this.imagen = imagen;
+        this.genero = genero;
+    }
+
+    public Cancion(int id, String nombre, int anioPublicacion, String compositor, String interprete, String imagen, GeneroMusical genero) {
+        this.id = id;
+        this.nombre = nombre;
+        this.anioPublicacion = anioPublicacion;
+        this.compositor = compositor;
+        this.interprete = interprete;
+        this.imagen = imagen;
+        this.genero = genero;
+    }
+    
+    
 }
+
+
