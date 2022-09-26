@@ -33,6 +33,11 @@ public class TiendacumbiApplicationTest {
     @Test
     @Disabled
     void verificarSiSeActualizaUnGenero() {
+
+        /**
+         *
+         * Este test tiene un error
+         */
         GeneroMusical g = new GeneroMusical("RoLyn", "Rolysing", true);
         GeneroMusical guardado = servicio.crearNuevoGenero(g);
         guardado.setNombre("RoLon");
