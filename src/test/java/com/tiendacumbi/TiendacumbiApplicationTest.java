@@ -33,14 +33,14 @@ public class TiendacumbiApplicationTest {
     @Test
     @Disabled
     void verificarSiSeActualizaUnGenero() {
-        GeneroMusical g = new GeneroMusical("Rocky", "Rock and roll", true);
+        GeneroMusical g = new GeneroMusical("RoLyn", "Rolysing", true);
         GeneroMusical guardado = servicio.crearNuevoGenero(g);
-        guardado.setNombre("Rock");
-        guardado.setCarpeta("Rock en español");
+        guardado.setNombre("RoLon");
+        guardado.setCarpeta("Rollons");
         guardado.setHab(true);
         GeneroMusical actualizado = servicio.actualizarGenero(guardado);
 
-        Assertions.assertTrue(actualizado.getCarpeta().equals("Rock and roll"), "ERROR no se pudo Actualizar genero");
+        Assertions.assertTrue(actualizado.getCarpeta().equals("Rollons"), "ERROR no se pudo Actualizar genero");
         Assertions.assertTrue(actualizado.isHab() == false, "ERROR no se pudo actualizar genero");
     }
 }
