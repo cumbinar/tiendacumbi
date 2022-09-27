@@ -4,7 +4,9 @@
  */
 package com.tiendacumbi.servicios;
 
+import com.tiendacumbi.entidades.Cancion;
 import com.tiendacumbi.repositorios.ICancionRepository;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,6 +16,30 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class CancionService {
-  @Autowired
-private ICancionRepository cancionRepo;  
+
+    @Autowired
+    private ICancionRepository cancionRepo;
+
+    public List<Cancion> cargarCanciones() {
+        return cancionRepo.findAll();
+    }
+    
+     public List<Cancion> cargarCancionesPorCriterio(String criterio) {
+        return cancionRepo.findByNombreContainingOrCompositorContainingOrInterpreteContaining(criterio, criterio, criterio);
+     }
+     
+    public Cancion cargarCancion(int id){
+    return cancionRepo.findById(id).orElse (null);
+    }
+    
+    public Cancion guardarCancion(Cancion c){
+    return cancionRepo.save(c);
+    }
+    
+    public void eliminarCancion(int id){
+    
+    cancionRepo.deleteById(id);
+    }
+    
+    
 }
