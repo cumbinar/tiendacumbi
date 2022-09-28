@@ -31,7 +31,7 @@ public class TiendacumbiApplicationTest {
     }
 
     @Test
-   @Disabled
+    @Disabled
     void verificarSiSeActualizaUnGenero() {
 
         /**
@@ -48,10 +48,11 @@ public class TiendacumbiApplicationTest {
         Assertions.assertTrue(actualizado.getCarpeta().equals("Rolon"), "ERROR no se pudo Actualizar genero");
         Assertions.assertTrue(actualizado.isHab() == false, "ERROR no se pudo actualizar genero");
     }
-    
+
     @Test
-    void verificarSiSeBorraUnGeneroMusical(){
-        GeneroMusical g = new GeneroMusical(33,"RoLyn", "Rolysing", true);
+    @Disabled
+    void verificarSiSeBorraUnGeneroMusical() {
+        GeneroMusical g = new GeneroMusical(33, "RoLyn", "Rolysing", true);
         servicio.eliminarGenero(g);
     }
 }
