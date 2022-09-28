@@ -28,7 +28,7 @@ public class Cancion {
     @Column(name = "nombre", length=45, nullable=false, unique=false )
     private String nombre;
     
-    @Column(name = "anioPublicacion", nullable =false, unique = false)
+    @Column(name = "anio_publicacion", nullable =false, unique = false)
     private int anioPublicacion;
     
     @Column(name = "compositor", length=70, nullable = false, unique = false )
@@ -41,13 +41,11 @@ public class Cancion {
     private String imagen;
     
     @ManyToOne
-    @JoinColumn(name = "idGeneroMusical")
+    @JoinColumn(name = "id_generomusical")
     private GeneroMusical genero;    
 
     public Cancion() {
     }
-    
-    
 
     public Cancion(String nombre, int anioPublicacion, String compositor, String interprete, String imagen, GeneroMusical genero) {
         this.nombre = nombre;
@@ -125,6 +123,7 @@ public class Cancion {
     }
     
     
+
 }
 
 
