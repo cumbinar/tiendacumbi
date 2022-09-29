@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  *
@@ -18,21 +19,32 @@ import org.springframework.web.bind.annotation.GetMapping;
  */
 @Controller
 public class CancionesController {
-   
+
     @Autowired
     private CancionService cancionService;
-    
-   @GetMapping("/listacanciones")
-    public String cargarlistaCanciones(Model model){
-        List<Cancion> canciones = cancionService.cargarCanciones();
+
+    /**
+     * @GetMapping("/listacanciones") public String cargarlistaCanciones(Model
+     * model) { List<Cancion> canciones = cancionService.cargarCanciones();
+     * model.addAttribute("canciones", canciones); return "listacanciones"; }
+     */
+
+    @GetMapping("/listacanciones")
+    public String cargarlistaCancionesPorCriterio(Model model, @RequestParam(name = "criterio", required = false) String criterio) {
+        List<Cancion> canciones;
+        if (criterio == null) {
+            canciones = cancionService.cargarCanciones();
+
+        } else {
+            canciones = cancionService.cargarCancionesPorCriterio(criterio);
+
+        }
         model.addAttribute("canciones", canciones);
         return "listacanciones";
     }
-    
-    /**  
-    @GetMapping("/listacanciones")
-    public String cargarListaCanciones() {
-        return "listacanciones";
-    }
-    */
+
+    /**
+     * @GetMapping("/listacanciones") public String cargarListaCanciones() {
+     * return "listacanciones"; }
+     */
 }
