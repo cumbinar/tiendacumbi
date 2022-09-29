@@ -41,8 +41,6 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                 </div>
         </nav>
 
-        <h4 class="container">Para implementar esta web</h4>
-
         <form action="/listacanciones" method="get" class="container"> 
             <label for="criterio">Buscar por:</label>
             <input  type="text" th:value="${criterio}"  id="criterio" name="criterio">
@@ -62,7 +60,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                 </tr>
             </thead>
             <tbody>
-                <tr th:if="${not #lists.isEmpty(canciones}"    th:each="genero : ${generos}">
+                <tr th:if="${not #lists.isEmpty(canciones)}"    th:each="cancion : ${canciones}">
                     <td scope="row" th:text="${cancion.id}">...</td>
                     <td th:text="${cancion.nombre}">...</td>
                     <td th:text="${cancion.anioPublicacion}">...</td>
@@ -70,15 +68,13 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                     <td th:text="${cancion.genero.nombre}">...</td>
 
                     <td>
-
                         <a  th:href="${'/canciones/form/'+ cancion.id}">Editar </a>
                         <a  th:href="${'/canciones/eliminar/' + cancion.id}">Eliminar </a>
                     </td>
                 </tr>
-                
+
                 <tr th:if="${#lists.isEmpty(canciones)}">
-                    <td colspam ="6" >No se encontraron registros </td>
-                   
+                    <td colspan ="6" >No se encontraron registros </td>
                 </tr>
             </tbody>    
 

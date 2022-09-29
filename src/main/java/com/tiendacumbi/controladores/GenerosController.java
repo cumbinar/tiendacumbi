@@ -43,8 +43,5 @@ public class GenerosController {
         return "formgeneros";
     }
 
-    @GetMapping("/listacanciones")
-    public String cargarListaCanciones() {
-        return "listacanciones";
-    }
+   
 }
