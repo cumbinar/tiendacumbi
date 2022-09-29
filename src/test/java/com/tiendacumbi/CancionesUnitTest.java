@@ -28,10 +28,10 @@ public class CancionesUnitTest {
     private CancionService cancionService;
 
     @Test
-    @Disabled
+  
     public void verificarSiSeGuardaCancionNueva() {
-        GeneroMusical g = generoService.consultarGeneros(8);
-        Cancion c = new Cancion("Agua de la Guayuza", 2010, "Segundo Pinchao", "Trio Fronterizo", "guayuza.jpg", g);
+        GeneroMusical g = generoService.consultarGeneros(4);
+        Cancion c = new Cancion("No me se el nombre", 2010, "Rober GALARGA", "lOS FILOMENOS", "bachata.jpg", g);
         Assertions.assertDoesNotThrow(() -> {
             cancionService.guardarCancion(c);
         }, "Error al guardar canción");
