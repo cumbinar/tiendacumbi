@@ -28,7 +28,7 @@ public class CancionesUnitTest {
     private CancionService cancionService;
 
     @Test
-  
+    @Disabled
     public void verificarSiSeGuardaCancionNueva() {
         GeneroMusical g = generoService.consultarGeneros(20);
         Cancion c = new Cancion("El rondador", 1950, "Inti Illimani", "Don Medardo", "rondador.jpg", g);
@@ -36,6 +36,5 @@ public class CancionesUnitTest {
             cancionService.guardarCancion(c);
         }, "Error al guardar canción");
     }
-    
-    
+
 }
