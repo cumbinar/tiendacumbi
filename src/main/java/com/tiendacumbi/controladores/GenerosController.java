@@ -34,6 +34,7 @@ public class GenerosController {
         }
         else{
             modelo.addAttribute("generos", servicio.consultarGeneros(criterio));
+            modelo.addAttribute("criterio", criterio);
         }
         return "listageneros";
     }
