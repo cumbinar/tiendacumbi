@@ -36,5 +36,12 @@ public class CancionesUnitTest {
             cancionService.guardarCancion(c);
         }, "Error al guardar canción");
     }
+    
+       @Test
+    
+    void verificarSiSeBorraUnaCancion() {
+        Cancion c = new Cancion(4);
+       cancionService.eliminarCancion(4);
+    }
 
 }

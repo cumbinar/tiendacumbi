@@ -47,6 +47,12 @@ public class Cancion {
     public Cancion() {
     }
 
+    public Cancion(int id) {
+        this.id = id;
+    }
+    
+    
+
     public Cancion(String nombre, int anioPublicacion, String compositor, String interprete, String imagen, GeneroMusical genero) {
         this.nombre = nombre;
         this.anioPublicacion = anioPublicacion;

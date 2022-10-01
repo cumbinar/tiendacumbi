@@ -47,4 +47,8 @@ public class CancionService {
         }
     }
 
+    public void eliminarCancion(Cancion c) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
 }
