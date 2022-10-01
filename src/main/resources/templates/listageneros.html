@@ -59,11 +59,15 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                 </tr>
             </thead>
             <tbody>
-                <tr th:each="genero : ${generos}">
+                <tr th:if="${not #lists.isEmpty(generos)}"  th:each="genero : ${generos}">
                     <td scope="row" th:text="${genero.id}">...</td>
                     <td th:text="${genero.nombre}">...</td>
                     <td th:text="${genero.carpeta}">...</td>
                     <td th:text="${genero.hab}">...</td>
+                </tr>
+                
+                <tr th:if="${#lists.isEmpty(generos)}">
+                    <td colspan ="6" >No se encontraron registros </td>
                 </tr>
 
         </table>
